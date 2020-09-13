@@ -1,19 +1,19 @@
 require "pry"
 
 def nyc_pigeon_organizer(data)
-those_pigeons = data.each_with_object({}) do |(category, stats), pigeon_profiles|
+nyc_pigeons = data.each_with_object ({}) do |(category, stats), pigeon_profiles|
   stats.each do |qualities, names|
     names.each do |pigeon|
       if !pigeon_profiles[pigeon]
-        pigeon_profiles[pigeon] = {}
+        pigeon_profiles[pigeon]= {}
       end
       if !pigeon_profiles[pigeon][category]
         pigeon_profiles[pigeon][category] = []
       end
       pigeon_profiles[pigeon][category] << qualities.to_s
     end
+    end
   end
-end
 end
 
 
